@@ -1,0 +1,26 @@
+.venv 
+.deepeval 
+.env
+.chroma
+datasets
+.github
+results
+.vscode
+
+# Python
+__pycache__/
+*.pyc
+*.egg-info/
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.ipynb_checkpoints/
+
+# Virtualenvs
+venv/
+env/
+
+# Local env overrides (.env.example stays tracked)
+.env.local
+.env.*.local
+

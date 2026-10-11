@@ -1,0 +1,14 @@
+langchain
+langchain-openai
+langgraph
+openai
+chromadb
+python-dotenv
+streamlit
+pypdf
+deepeval
+langfuse
+requests
+
+
+
