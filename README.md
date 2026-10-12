@@ -57,11 +57,7 @@ LANGFUSE_BASE_URL=http://localhost:3001
 
 ### Start Langfuse
 
-The compose file is not shipped with this repo — get it from the Langfuse repository:
-
-```bash
-curl -O https://raw.githubusercontent.com/langfuse/langfuse/main/docker-compose.yml
-```
+The compose file is not shipped with this repo. Go to [github.com/langfuse/langfuse](https://github.com/langfuse/langfuse), get the `docker-compose.yml` from the repository root, and place it in this project's root.
 
 Langfuse serves its web container on port 3000 by default. This project expects 3001 (`LANGFUSE_BASE_URL`), so either remap the `langfuse-web` port to `3001:3000` in the compose file or set `LANGFUSE_BASE_URL=http://localhost:3000` in `.env`.
 
