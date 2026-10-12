@@ -17,7 +17,7 @@ The eval runner calls the same `ask_with_tools` function as the chat UI, so CI m
 ```
 app.py                     # entry point: ingest, then launch the Streamlit UI
 basic_evals.py             # minimal DeepEval example (one question, one metric)
-docker-compose.yml         # self-hosted Langfuse (web, worker, Postgres, ClickHouse, Redis, MinIO)
+docker-compose.yml         # self-hosted Langfuse, fetched from the Langfuse repo (see Setup)
 datasets/                  # source data: 6 CSV exports + 5 proposal PDFs
 src/
   config.py                # models, chunk sizes, paths
@@ -56,6 +56,16 @@ LANGFUSE_BASE_URL=http://localhost:3001
 ```
 
 ### Start Langfuse
+
+The compose file is not shipped with this repo — get it from the Langfuse repository:
+
+```bash
+curl -O https://raw.githubusercontent.com/langfuse/langfuse/main/docker-compose.yml
+```
+
+Langfuse serves its web container on port 3000 by default. This project expects 3001 (`LANGFUSE_BASE_URL`), so either remap the `langfuse-web` port to `3001:3000` in the compose file or set `LANGFUSE_BASE_URL=http://localhost:3000` in `.env`.
+
+Then start it:
 
 ```bash
 docker compose up -d
