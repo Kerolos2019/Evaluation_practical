@@ -103,12 +103,3 @@ For each of the 18 golden cases, the runner asks the agent, retrieves the top-4 
 
 Latest run: **16/18 cases passed (88.9%)**.
 
-## CI
-
-`.github/workflows/ci.yml` runs `python evals/run_eval.py` on every push and pull request. It needs an `OPENAI_API_KEY` repository secret. Langfuse tracing is turned off in CI (`LANGFUSE_TRACING_ENABLED=false`), but the metrics and the pass/fail gate still run.
-
-## Known issues
-
-- The `accounts_north_america` golden case uses the key `expected_tools` instead of `expected_tool`, so its tool accuracy is always 0. Its expected answer also misspells "HealthFirst" as "HeathFirst".
-- The safety metrics match substrings, so "skill" trips toxicity ("kill") and "small" trips bias ("all").
-- `get_weather` returns fixed dummy data.
